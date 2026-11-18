@@ -196,6 +196,12 @@
   .contact .actions { justify-content: center; }
   footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--faint); font-size: 13px; text-align: center; }
 
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+    .btn:hover { transform: none; }
+  }
+
   @media print {
     nav, .theme-btn, .actions { display: none !important; }
     section { break-inside: avoid; }
@@ -206,7 +212,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="logo mono" href="#top">biswajit<span>.</span>dev</a>
+    <a class="logo mono" href="#top">theWhiteBeard<span>.</span>dev</a>
     <div class="nav-links">
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
