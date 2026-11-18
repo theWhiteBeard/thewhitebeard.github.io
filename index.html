@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biswajit Chaudhury · Java Backend Developer</title>
+<meta name="description" content="Biswajit Chaudhury is a Java backend developer with 4 years of experience building Spring Boot microservices and REST APIs for financial services and order management systems.">
+<meta name="author" content="Biswajit Chaudhury">
+<meta property="og:title" content="Biswajit Chaudhury · Java Backend Developer">
+<meta property="og:description" content="Java backend developer building Spring Boot microservices and REST APIs. Bangalore, India.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://thewhitebeard.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='28' fill='white'%3EBC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --text: #1c1917;
+    --muted: #57534e;
+    --faint: #a8a29e;
+    --border: #e7e5e4;
+    --accent: #0f766e;
+    --accent-soft: #ccfbf1;
+    --accent-text: #115e59;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 4px 16px rgba(28,25,23,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1214;
+      --surface: #161a1d;
+      --text: #ecebe8;
+      --muted: #a8a29e;
+      --faint: #6b6560;
+      --border: #262b2f;
+      --accent: #2dd4bf;
+      --accent-soft: #123a37;
+      --accent-text: #5eead4;
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1214;
+    --surface: #161a1d;
+    --text: #ecebe8;
+    --muted: #a8a29e;
+    --faint: #6b6560;
+    --border: #262b2f;
+    --accent: #2dd4bf;
+    --accent-soft: #123a37;
+    --accent-text: #5eead4;
+    --shadow: none;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-text); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
+  .logo { font-weight: 600; color: var(--text); font-size: 15px; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: var(--muted); font-size: 14px; }
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+  .theme-btn {
+    background: none; border: 1px solid var(--border); color: var(--muted);
+    width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+    display: grid; place-items: center;
+  }
+  .theme-btn:hover { color: var(--text); border-color: var(--faint); }
+  @media (max-width: 640px) { .nav-links a { display: none; } }
+
+  /* Hero */
+  header.hero { padding: 72px 0 56px; }
+  .eyebrow { color: var(--accent-text); font-size: 14px; margin-bottom: 14px; }
+  h1 { font-size: clamp(36px, 7vw, 56px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; }
+  .role { font-size: clamp(18px, 3vw, 22px); color: var(--muted); margin-top: 10px; font-weight: 500; }
+  .summary { margin-top: 24px; max-width: 680px; color: var(--muted); font-size: 17px; }
+  .summary strong { color: var(--text); font-weight: 600; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 10px; font-size: 14px; font-weight: 500;
+    border: 1px solid var(--border); color: var(--text); background: var(--surface);
+    transition: border-color .15s, transform .15s;
+  }
+  .btn:hover { text-decoration: none; border-color: var(--faint); transform: translateY(-1px); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  :root[data-theme="dark"] .btn.primary { color: #042f2e; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { color: #042f2e; } }
+  .btn svg { width: 16px; height: 16px; }
+
+  .stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+    background: var(--border); border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; margin-top: 48px;
+  }
+  .stat { background: var(--surface); padding: 20px; }
+  .stat b { display: block; font-size: 28px; letter-spacing: -0.02em; }
+  .stat span { color: var(--muted); font-size: 13px; }
+  @media (max-width: 560px) {
+    .stats { grid-template-columns: 1fr; }
+    .stat { display: flex; align-items: baseline; gap: 12px; padding: 14px 18px; }
+    .stat b { font-size: 22px; min-width: 64px; }
+  }
+
+  /* Sections */
+  section { padding: 48px 0; border-top: 1px solid var(--border); }
+  h2 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--faint); font-weight: 600; margin-bottom: 28px;
+  }
+  h2 .mono { color: var(--accent); margin-right: 6px; }
+
+  /* Skills */
+  .skills { display: grid; gap: 18px; }
+  .skill-row { display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: start; }
+  .skill-row h3 { font-size: 14px; font-weight: 600; padding-top: 4px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 13px; padding: 4px 10px; border-radius: 999px;
+    background: var(--surface); border: 1px solid var(--border); color: var(--muted);
+  }
+  .chip.hi { background: var(--accent-soft); border-color: transparent; color: var(--accent-text); font-weight: 500; }
+  @media (max-width: 640px) { .skill-row { grid-template-columns: 1fr; gap: 8px; } }
+
+  /* Experience */
+  .timeline { position: relative; }
+  .job { position: relative; padding-left: 28px; padding-bottom: 36px; }
+  .job:last-child { padding-bottom: 0; }
+  .job::before {
+    content: ""; position: absolute; left: 5px; top: 10px; bottom: -10px;
+    width: 2px; background: var(--border);
+  }
+  .job:last-child::before { display: none; }
+  .job::after {
+    content: ""; position: absolute; left: 0; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--accent);
+  }
+  .job.current::after { background: var(--accent); }
+  .job-head { display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
+  .job h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  .job .company { color: var(--accent-text); }
+  .job .when { font-size: 13px; color: var(--muted); white-space: nowrap; padding-top: 3px; }
+  .job .where { font-size: 14px; color: var(--faint); margin-top: 2px; }
+  .job ul { margin-top: 12px; padding-left: 18px; color: var(--muted); }
+  .job li { margin-bottom: 6px; }
+  .job li::marker { color: var(--faint); }
+  .badge {
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    padding: 2px 8px; border-radius: 999px; margin-left: 8px; vertical-align: 3px;
+    background: var(--accent-soft); color: var(--accent-text);
+  }
+
+  /* Cards */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px; box-shadow: var(--shadow);
+  }
+  .card h3 { font-size: 16px; font-weight: 600; }
+  .card p { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .card .meta { color: var(--faint); font-size: 13px; margin-top: 8px; }
+  .list { list-style: none; display: grid; gap: 12px; }
+  .list li { display: flex; gap: 12px; color: var(--muted); }
+  .list li::before { content: "→"; color: var(--accent); font-family: "JetBrains Mono", monospace; flex-shrink: 0; }
+  .list b { color: var(--text); font-weight: 600; }
+
+  /* Contact */
+  .contact { text-align: center; padding: 64px 0 72px; }
+  .contact h2 { margin-bottom: 12px; }
+  .contact p.big { font-size: clamp(22px, 4vw, 30px); font-weight: 600; letter-spacing: -0.02em; }
+  .contact p.sub { color: var(--muted); margin-top: 8px; }
+  .contact .actions { justify-content: center; }
+  footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--faint); font-size: 13px; text-align: center; }
+
+  @media print {
+    nav, .theme-btn, .actions { display: none !important; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo mono" href="#top">biswajit<span>.</span>dev</a>
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="top" class="wrap">
+  <header class="hero">
+    <p class="eyebrow mono">// Bangalore, India</p>
+    <h1>Biswajit Chaudhury</h1>
+    <p class="role">Java Backend Developer</p>
+    <p class="summary">
+      I design and build scalable microservices with <strong>Java, Spring Boot, REST APIs and JPA/Hibernate</strong>.
+      I'm currently modernizing legacy approval-workflow systems for a leading U.S. financial services firm by
+      migrating monolithic Java modules to Spring Boot microservices. Before that I built backend systems for
+      order management, credit and payments across the full SDLC.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:biswa.ch101@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Email me
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/biswajit-chaudhury-bb5199181" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn" href="https://github.com/theWhiteBeard" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="Biswajit-Chaudhury-Resume.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download resume
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>4+</b><span>years building Java backends</span></div>
+      <div class="stat"><b>~20%</b><span>faster APIs through query tuning and caching</span></div>
+      <div class="stat"><b>3</b><span>roles across fintech and B2B commerce</span></div>
+    </div>
+  </header>
+
+  <section id="skills">
+    <h2><span class="mono">01</span>Core skills</h2>
+    <div class="skills">
+      <div class="skill-row">
+        <h3>Languages</h3>
+        <div class="chips"><span class="chip hi">Java</span><span class="chip">JavaScript</span><span class="chip">SQL</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>Backend &amp; frameworks</h3>
+        <div class="chips"><span class="chip hi">Spring Boot</span><span class="chip">Spring MVC</span><span class="chip">Spring JPA</span><span class="chip">Hibernate</span><span class="chip">Spring Framework</span><span class="chip">J2EE</span><span class="chip">JDBC</span><span class="chip hi">RESTful APIs</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>Architecture</h3>
+        <div class="chips"><span class="chip hi">Microservices</span><span class="chip">Distributed Systems</span><span class="chip">API Gateway</span><span class="chip">Event-Driven Architecture</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>Databases</h3>
+        <div class="chips"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">Oracle SQL</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>Frontend</h3>
+        <div class="chips"><span class="chip">JavaScript</span><span class="chip">jQuery</span><span class="chip">Bootstrap</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JSP</span><span class="chip">AJAX</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>Tools &amp; DevOps</h3>
+        <div class="chips"><span class="chip">Git</span><span class="chip">GitLab</span><span class="chip">Jenkins</span><span class="chip">SonarQube</span><span class="chip">Nexus</span><span class="chip">Postman</span><span class="chip">Grafana</span><span class="chip">Maven</span><span class="chip">SVN</span></div>
+      </div>
+      <div class="skill-row">
+        <h3>Practices</h3>
+        <div class="chips"><span class="chip">Debugging</span><span class="chip">Performance Optimization</span><span class="chip">Apache POI</span><span class="chip">SDLC</span><span class="chip">Unit &amp; Integration Testing</span><span class="chip">Problem Solving</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2><span class="mono">02</span>Experience</h2>
+    <div class="timeline">
+      <article class="job current">
+        <div class="job-head">
+          <h3>Associate Consultant · <span class="company">Infosys</span><span class="badge">CURRENT</span></h3>
+          <span class="when mono">Jul 2025 – Present</span>
+        </div>
+        <p class="where">Client: a leading U.S. global financial services firm · Bangalore, India</p>
+        <ul>
+          <li>Modernizing the bank's approval-workflow system by migrating legacy Java modules to a Spring Boot microservices architecture, which reduces technical debt and makes the system easier to maintain.</li>
+          <li>Building backend components that trigger and manage approval tasks created through the API, covering payload construction, workflow orchestration and task state management.</li>
+          <li>Designing and developing RESTful APIs that fetch, transform and populate approval data on UI pages so the frontend and backend communicate reliably.</li>
+          <li>Re-architecting legacy business logic into modular service layers, DTOs and domain models to make the code clearer, more reusable and easier to test.</li>
+          <li>Improving backend reliability with optimized queries, structured exception handling and wider unit and integration test coverage, which has reduced production defects.</li>
+          <li>Working with architects, QA, DevOps and business stakeholders across SIT, UAT and production releases to ship on time without defects.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Software Developer · <span class="company">Tata Nexarc</span></h3>
+          <span class="when mono">Jun 2023 – Jul 2025</span>
+        </div>
+        <p class="where">Remote</p>
+        <ul>
+          <li>Developed backend modules for the Order Management System, including scheduling workflows, address validation, GST data processing and automated credit calculation.</li>
+          <li>Built and optimized backend services with Java 8, Spring Boot, Spring MVC and JPA to keep request latency low under high order volumes.</li>
+          <li>Designed and implemented RESTful APIs for credit management, payments, logistics and customer operations.</li>
+          <li>Built an automated reminder system for overdue credit that replaced manual follow-ups and made collections communication more consistent.</li>
+          <li>Led debugging and root-cause analysis across distributed services, which made the system more reliable and cut repeat incidents.</li>
+          <li>Contributed to the UI of the Credit Management System landing page and integrated it with the backend.</li>
+          <li>Worked with Product, QA and DevOps on requirement analysis, testing, deployment and release planning.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3>Junior Developer · <span class="company">Tata Nexarc</span></h3>
+          <span class="when mono">Jun 2022 – Jun 2023</span>
+        </div>
+        <p class="where">Remote</p>
+        <ul>
+          <li>Made APIs about 20% faster through SQL query optimization, caching strategies and backend refactoring.</li>
+          <li>Enhanced frontend components with JavaScript and jQuery, which improved the user experience and reduced UI defects.</li>
+          <li>Debugged and fixed issues across multiple backend modules to keep production releases stable.</li>
+          <li>Documented APIs and backend modules so new engineers could onboard and integrate faster.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2><span class="mono">03</span>Education &amp; certifications</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Bachelor of Technology</h3>
+        <p>Silicon Institute of Technology, Bhubaneswar, Odisha</p>
+        <p class="meta mono">Graduated Jul 2022 · GPA 8.05 / 10</p>
+      </div>
+      <div class="card">
+        <h3>Certifications</h3>
+        <ul class="list" style="margin-top:10px">
+          <li><span><b>Full Stack Java Developer</b> (Java, JSP, RESTful Web Services, Spring) · Udemy</span></li>
+          <li><span><b>SQL for Beginners</b> (MySQL and database design) · Udemy</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <h2><span class="mono">04</span>Leadership &amp; extracurricular</h2>
+    <ul class="list">
+      <li><span><b>Cultural Secretary</b>, Silicon Student Council (2021–2022)</span></li>
+      <li><span><b>Organizer</b>, Hip Hop Dance Battle at the annual college fest (Jan 2019)</span></li>
+      <li><span><b>Club Member</b>, Cultural Society, Silicon Institute of Technology (2018–2022)</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2><span class="mono">05</span>Contact</h2>
+    <p class="big">Let's build something reliable.</p>
+    <p class="sub">I'm open to backend engineering opportunities. Email is the quickest way to reach me.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:biswa.ch101@gmail.com">biswa.ch101@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/biswajit-chaudhury-bb5199181" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Biswajit Chaudhury · Bangalore, India</div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved) root.setAttribute("data-theme", saved);
+    } catch (e) {}
+    document.getElementById("themeBtn").addEventListener("click", function () {
+      var current = root.getAttribute("data-theme") ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      var next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
