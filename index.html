@@ -10,7 +10,9 @@
 <meta property="og:description" content="Java backend developer building Spring Boot microservices and REST APIs. Bangalore, India.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://thewhitebeard.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='28' fill='white'%3EBC%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="https://thewhitebeard.github.io/assets/logo.png">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -77,8 +79,10 @@
     border-bottom: 1px solid var(--border);
   }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
-  .logo { font-weight: 600; color: var(--text); font-size: 15px; }
-  .logo span { color: var(--accent); }
+  .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text); font-size: 15px; }
+  .logo:hover { text-decoration: none; }
+  .logo img { width: 32px; height: 32px; border-radius: 6px; display: block; }
+  .logo .dot { color: var(--accent); }
   .nav-links { display: flex; gap: 20px; align-items: center; }
   .nav-links a { color: var(--muted); font-size: 14px; }
   .nav-links a:hover { color: var(--text); text-decoration: none; }
@@ -212,7 +216,7 @@
 
 <nav>
   <div class="wrap">
-    <a class="logo mono" href="#top">theWhiteBeard<span>.</span>dev</a>
+    <a class="logo mono" href="#top"><img src="assets/logo.png" alt="" width="32" height="32"><span>theWhiteBeard<span class="dot">.</span>dev</span></a>
     <div class="nav-links">
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
